@@ -1,6 +1,7 @@
 import { PATH } from "./configs/path";
 
 import { showElemsInitially } from "./modules/showElemsInitially";
+import { loadMore } from "./modules/loadMore";
 
 (function() {
   const INIT_ELEMS_TO_SHOW = 3;
@@ -14,7 +15,7 @@ import { showElemsInitially } from "./modules/showElemsInitially";
     const target = e.target as HTMLElement;
 
     if (target.closest(PATH.loadMoreBtn)) {
-      console.log("clicked");
+      loadMore(PATH.cardItem, ELEMS_TO_REVEAL);
     }
   });
 })();

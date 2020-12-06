@@ -1,6 +1,4 @@
-function revealElems(elems: HTMLElement[]): void {
-  elems.forEach(elem => (elem.hidden = false));
-}
+import { revealElems } from "./utils";
 
 export function showElemsInitially(
   elemsClassname: string,
