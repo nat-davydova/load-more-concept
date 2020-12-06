@@ -1,0 +1,10 @@
+.load-more__counter {
+
+	&:before {
+		content: " (";
+	}
+
+	&:after {
+		content: ")";
+	}
+}

@@ -1,4 +1,7 @@
 export const PATH = {
   cardItem: ".card-block",
-  loadMoreBtn: ".load-more"
+  loadMore: {
+    btn: ".load-more",
+    counter: ".load-more__counter"
+  }
 };
