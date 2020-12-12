@@ -2,6 +2,12 @@ import { PATH } from "../configs/path";
 
 import { getElemsArray, hideElem, revealElems } from "./utils";
 
+function hideLoadMoreBtn(): void {
+  const loadMoreBtn = document.querySelector<HTMLElement>(PATH.loadMore.btn);
+
+  loadMoreBtn && hideElem(loadMoreBtn);
+}
+
 export function loadMore(elemsClassname: string, numToShow: number): void {
   const elems = getElemsArray(elemsClassname);
 
@@ -12,12 +18,6 @@ export function loadMore(elemsClassname: string, numToShow: number): void {
 
     revealElems(elemsToShow);
 
-    if (!hiddenElems.length) {
-      const loadMoreBtn = document.querySelector<HTMLElement>(
-        PATH.loadMore.btn
-      );
-
-      loadMoreBtn && hideElem(loadMoreBtn);
-    }
+    !hiddenElems.length && hideLoadMoreBtn();
   }
 }
