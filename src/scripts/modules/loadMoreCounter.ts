@@ -16,7 +16,14 @@ function getCounterValue(): number {
   return hiddenElems.length;
 }
 
+function setCounterValue(countVal: number): void {
+  counter && (counter.textContent = countVal.toString());
+}
+
 export function loadMoreCounter(): void {
-  showCounterElem();
-  const counterValue = getCounterValue();
+  if (counter) {
+    counter.hidden && showCounterElem();
+    const counterValue = getCounterValue();
+    setCounterValue(counterValue);
+  }
 }
