@@ -1,13 +1,13 @@
-import { revealElems } from "./utils";
+import { getElemsArray, revealElems } from "./utils";
 
 export function loadMore(elemsClassname: string, numToShow: number): void {
-  const elems: HTMLElement[] = Array.from(
-    document.querySelectorAll(elemsClassname)
-  );
+  const elems = getElemsArray(elemsClassname);
 
-  const hiddenElems = elems.filter(elem => elem.hidden);
+  if (elems) {
+    const hiddenElems = elems.filter(elem => elem.hidden);
 
-  const elemsToShow = hiddenElems.splice(0, numToShow);
+    const elemsToShow = hiddenElems.splice(0, numToShow);
 
-  revealElems(elemsToShow);
+    revealElems(elemsToShow);
+  }
 }

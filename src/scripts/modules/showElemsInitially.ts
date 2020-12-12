@@ -1,14 +1,14 @@
-import { revealElems } from "./utils";
+import { getElemsArray, revealElems } from "./utils";
 
 export function showElemsInitially(
   elemsClassname: string,
   numToShowInitially: number
 ): void {
-  const elems: HTMLElement[] = Array.from(
-    document.querySelectorAll(elemsClassname)
-  );
+  const elems = getElemsArray(elemsClassname);
 
-  const elemsToShow = elems.splice(0, numToShowInitially);
+  if (elems) {
+    const elemsToShow = elems.splice(0, numToShowInitially);
 
-  revealElems(elemsToShow);
+    revealElems(elemsToShow);
+  }
 }

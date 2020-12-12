@@ -1,6 +1,6 @@
 import { PATH } from "../configs/path";
 
-import { revealElem } from "./utils";
+import { getElemsArray, revealElem } from "./utils";
 
 const counter = document.querySelector<HTMLElement>(PATH.loadMore.counter);
 
@@ -8,22 +8,22 @@ function showCounterElem(): void {
   counter && revealElem(counter);
 }
 
-function getCounterValue(): number {
-  const hiddenElems = document.querySelectorAll<HTMLElement>(
-    `${PATH.cardItem}[hidden]`
-  );
+function getCounterValue(elemsClassname: string): number | null {
+  const elems = getElemsArray(elemsClassname);
 
-  return hiddenElems.length;
+  const hiddenElems = elems && elems.filter(elem => elem.hidden);
+
+  return hiddenElems ? hiddenElems.length : null;
 }
 
 function setCounterValue(countVal: number): void {
   counter && (counter.textContent = countVal.toString());
 }
 
-export function loadMoreCounter(): void {
+export function loadMoreCounter(elemsClassname: string): void {
   if (counter) {
     counter.hidden && showCounterElem();
-    const counterValue = getCounterValue();
-    setCounterValue(counterValue);
+    const counterValue = getCounterValue(elemsClassname);
+    counterValue && setCounterValue(counterValue);
   }
 }
