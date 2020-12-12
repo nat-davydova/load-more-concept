@@ -24,6 +24,6 @@ export function loadMoreCounter(elemsClassname: string): void {
   if (counter) {
     counter.hidden && showCounterElem();
     const counterValue = getCounterValue(elemsClassname);
-    counterValue && setCounterValue(counterValue);
+    counterValue !== null && setCounterValue(counterValue);
   }
 }
