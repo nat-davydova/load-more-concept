@@ -1,7 +1,6 @@
 import { PATH } from "./configs/path";
 
-import { showElemsInitially } from "./modules/showElemsInitially";
-import { loadMore } from "./modules/loadMore";
+import { showElemsInitially, loadMore, loadMoreCounter } from "./modules";
 
 (function() {
   const INIT_ELEMS_TO_SHOW = 3;
@@ -10,6 +9,7 @@ import { loadMore } from "./modules/loadMore";
 
   window.addEventListener("load", () => {
     showElemsInitially(PATH.cardItem, INIT_ELEMS_TO_SHOW);
+    ADD_COUNTER_TO_LOAD_MORE_BTN && loadMoreCounter();
   });
 
   document.addEventListener("click", e => {
@@ -17,6 +17,7 @@ import { loadMore } from "./modules/loadMore";
 
     if (target.closest(PATH.loadMore.btn)) {
       loadMore(PATH.cardItem, ELEMS_TO_REVEAL);
+      ADD_COUNTER_TO_LOAD_MORE_BTN && loadMoreCounter();
     }
   });
 })();

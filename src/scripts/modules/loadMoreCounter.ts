@@ -1,1 +1,3 @@
-export function loadMoreCounter(): void {}
+export function loadMoreCounter(): void {
+  console.log("inited");
+}
