@@ -4,10 +4,19 @@ import { revealElem } from "./utils";
 
 const counter = document.querySelector<HTMLElement>(PATH.loadMore.counter);
 
-function showCounterElem() {
+function showCounterElem(): void {
   counter && revealElem(counter);
+}
+
+function getCounterValue(): number {
+  const hiddenElems = document.querySelectorAll<HTMLElement>(
+    `${PATH.cardItem}[hidden]`
+  );
+
+  return hiddenElems.length;
 }
 
 export function loadMoreCounter(): void {
   showCounterElem();
+  const counterValue = getCounterValue();
 }
