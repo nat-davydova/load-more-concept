@@ -1,6 +1,11 @@
 import { PATH } from "../configs/path";
 
-import { getElemsArray, getElemOffset, hideElem, revealElems } from "./utils";
+import {
+  getElemsArray,
+  initScrollingTop,
+  hideElem,
+  revealElems
+} from "./utils";
 
 function hideLoadMoreBtn(): void {
   const loadMoreBtn = document.querySelector<HTMLElement>(PATH.loadMore.btn);
@@ -11,11 +16,9 @@ function hideLoadMoreBtn(): void {
 function revealHiddenElems(elems: HTMLElement[]): void {
   revealElems(elems);
 
-  const elem1 = elems[0];
+  const elemToScrollTo = elems[0];
 
-  const offsetTop = getElemOffset(elem1, "top");
-
-  window.scrollTo({ top: offsetTop, behavior: "smooth" });
+  initScrollingTop(elemToScrollTo);
 }
 
 export function loadMore(elemsClassname: string, numToShow: number): void {

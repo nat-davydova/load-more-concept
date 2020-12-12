@@ -2,16 +2,10 @@ export function getElemsArray(elemClassname: string): HTMLElement[] | null {
   return Array.from(document.querySelectorAll<HTMLElement>(elemClassname));
 }
 
-type Direction = "top" | "left";
-
-export function getElemOffset(elem: HTMLElement, direction: Direction): number {
+export function getElemTopOffset(elem: HTMLElement): number {
   const rect = elem.getBoundingClientRect();
 
-  if (direction === "top") {
-    return rect.top + window.scrollY;
-  } else {
-    return rect.left + window.scrollX;
-  }
+  return rect.top + window.scrollY;
 }
 
 export function hideElem(elem: HTMLElement): void {
@@ -24,4 +18,10 @@ export function revealElem(elem: HTMLElement): void {
 
 export function revealElems(elems: HTMLElement[]): void {
   elems.forEach(elem => revealElem(elem));
+}
+
+export function initScrollingTop(elemToScrollTo: HTMLElement): void {
+  const offsetTop = getElemTopOffset(elemToScrollTo);
+
+  window.scrollTo({ top: offsetTop, behavior: "smooth" });
 }
