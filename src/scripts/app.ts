@@ -7,7 +7,7 @@ import { showElemsInitially, loadMore, loadMoreCounter } from "./modules";
   const NUM_INIT_VISIBLE_ELEMS = 3;
   const NUM_ELEMS_TO_REVEAL = 6;
   const ADD_COUNTER_TO_LOAD_MORE_BTN = true;
-  const ANIMATE_CSS_ANIMATION_TYPE = "fadeInBottomLeft";
+  const ANIMATE_CSS_ANIMATION_TYPE = "fadeIn";
   // here you could pass any utility classes from animate.css (like delays etc) in animate_className way
   // DON'T PASS animate_animated here, it's added by default
   const ANIMATE_CSS_ADDITIONAL_CLASSES: string[] = [];

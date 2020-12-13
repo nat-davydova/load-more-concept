@@ -1,4 +1,7 @@
 export declare const PATH: {
     cardItem: string;
-    loadMoreBtn: string;
+    loadMore: {
+        btn: string;
+        counter: string;
+    };
 };
