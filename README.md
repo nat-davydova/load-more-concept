@@ -30,9 +30,16 @@ User is able to:
 
 ## Usage Details
 
-If you want to implement it to your website, you need:
+### If you want to implement it to your website, you need:
 
 * remove pieces which are marked with `YOU DON'T NEED IT IN YOUR CODE` - they are for animations select list handling;
 * remove all the `animationSelectHandler.ts` - it's for animations select list handling;
 * change `let ANIMATE_CSS_ANIMATION_TYPE` in the `app.ts` to `const`;
 * pass the animation type to `ANIMATE_CSS_ANIMATION_TYPE` if you want any (all the animations you could use are in `Animations` type) or just leave it equal to empty string, if you don't need an animation;
+
+### Also you could:
+
+* pass number of items you want to be visible initially to `NUM_INIT_VISIBLE_ELEMS`;
+* pass number of items you want to be reveal onclick to `NUM_ELEMS_TO_REVEAL`;
+* set `ADD_COUNTER_TO_LOAD_MORE_BTN` to `false` if you don't want a counter in 'Load More' button;
+* pass Animate.css utility classes into `ANIMATE_CSS_ADDITIONAL_CLASSES`;
