@@ -3,16 +3,14 @@ import { showElemsInitially } from "./showElemsInitially";
 import { PATH } from "../configs/path";
 import { loadMoreCounter } from "./loadMoreCounter";
 
-function hideOpenedCards(elemsClassname: string) {
-  const elems = getElemsArray(elemsClassname);
-  elems && hideElems(elems);
+function hideOpenedCards(elems: HTMLElement[]) {
+  hideElems(elems);
 }
 
-function removeAnimationClasses(elemsClassname: string) {
-  const elems = getElemsArray(elemsClassname);
+function removeAnimationClasses(elems: HTMLElement[]) {
   const animationClassRegex = /animate/gi;
 
-  elems?.forEach(elem => {
+  elems.forEach(elem => {
     const classList = elem.classList;
 
     classList.forEach(className => {
@@ -23,14 +21,22 @@ function removeAnimationClasses(elemsClassname: string) {
   });
 }
 
+function returnToInitState(elemsClassname: string, numToShowInitially: number) {
+  const elems = getElemsArray(elemsClassname);
+
+  if (elems) {
+    hideOpenedCards(elems);
+    showElemsInitially(elemsClassname, numToShowInitially);
+    removeAnimationClasses(elems);
+  }
+}
+
 export function animationSelectHandler(
   elemsClassname: string,
   numToShowInitially: number,
   isBtnCounter: boolean
 ) {
-  hideOpenedCards(elemsClassname);
-  showElemsInitially(elemsClassname, numToShowInitially);
-  removeAnimationClasses(elemsClassname);
+  returnToInitState(elemsClassname, numToShowInitially);
 
   const loadMoreBtn = document.querySelector<HTMLElement>(PATH.loadMore.btn);
   loadMoreBtn && revealElem(loadMoreBtn);
