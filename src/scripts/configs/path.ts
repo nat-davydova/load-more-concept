@@ -3,5 +3,6 @@ export const PATH = {
   loadMore: {
     btn: ".load-more",
     counter: ".load-more__counter"
-  }
+  },
+  animationsSelect: ".animations__select"
 };

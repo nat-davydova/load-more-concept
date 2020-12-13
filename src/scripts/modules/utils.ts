@@ -12,6 +12,10 @@ export function hideElem(elem: HTMLElement): void {
   elem.hidden = true;
 }
 
+export function hideElems(elems: HTMLElement[]): void {
+  elems.forEach(elem => hideElem(elem));
+}
+
 export function revealElem(elem: HTMLElement): void {
   elem.hidden = false;
 }
@@ -27,6 +31,7 @@ export function initScrollingTop(elemToScrollTo: HTMLElement): void {
 }
 
 export type Animations =
+  | ""
   | "bounce"
   | "flash"
   | "pulse"
