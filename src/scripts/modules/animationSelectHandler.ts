@@ -11,13 +11,11 @@ function removeAnimationClasses(elems: HTMLElement[]) {
   const animationClassRegex = /animate/gi;
 
   elems.forEach(elem => {
-    const classList = elem.classList;
-
-    classList.forEach(className => {
-      if (className.match(animationClassRegex)) {
-        elem.classList.remove(className);
-      }
-    });
+    const classList = Array.from(elem.classList);
+    const animatedClasses = classList.filter(className =>
+      className.match(animationClassRegex)
+    );
+    animatedClasses.forEach(className => elem.classList.remove(className));
   });
 }
 
