@@ -41,12 +41,24 @@ function revealHiddenElems(elems: HTMLElement[]): void {
   initScrollingTop(elemToScrollTo);
 }
 
+type AnimationParams = {
+  animationType?: string;
+  additionalAnimationClasses?: string[];
+};
+
 export function loadMore(
   elemsClassname: string,
   numToShow: number,
-  animationType?: string,
-  additionalAnimationClasses?: string[]
+  animationParams?: AnimationParams
 ): void {
+  let animationType;
+  let additionalAnimationClasses;
+
+  if (animationParams) {
+    animationType = animationParams.animationType;
+    additionalAnimationClasses = animationParams.additionalAnimationClasses;
+  }
+
   const elems = getElemsArray(elemsClassname);
 
   if (elems) {
