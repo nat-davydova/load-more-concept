@@ -1,13 +1,14 @@
 import { PATH } from "./configs/path";
 
 import { showElemsInitially, loadMore, loadMoreCounter } from "./modules";
+import type { Animations } from "./modules/utils";
 
 (function() {
   const ELEMS = PATH.cardItem;
   const NUM_INIT_VISIBLE_ELEMS = 3;
   const NUM_ELEMS_TO_REVEAL = 6;
   const ADD_COUNTER_TO_LOAD_MORE_BTN = true;
-  const ANIMATE_CSS_ANIMATION_TYPE = "fadeIn";
+  const ANIMATE_CSS_ANIMATION_TYPE: Animations = "fadeIn";
   // here you could pass any utility classes from animate.css (like delays etc) in animate_className way
   // DON'T PASS animate_animated here, it's added by default
   const ANIMATE_CSS_ADDITIONAL_CLASSES: string[] = [];

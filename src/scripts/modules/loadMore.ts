@@ -1,5 +1,7 @@
 import { PATH } from "../configs/path";
 
+import type { Animations } from "./utils";
+
 import {
   getElemsArray,
   initScrollingTop,
@@ -13,54 +15,9 @@ function hideLoadMoreBtn(): void {
   loadMoreBtn && hideElem(loadMoreBtn);
 }
 
-type Animations =
-  | "bounce"
-  | "flash"
-  | "pulse"
-  | "rubberBand"
-  | "shakeX"
-  | "shakeY"
-  | "headShake"
-  | "swing"
-  | "tada"
-  | "wobble"
-  | "jello"
-  | "heartBeat"
-  | "backInLeft"
-  | "backInRight"
-  | "bounceIn"
-  | "bounceInLeft"
-  | "bounceInRight"
-  | "fadeIn"
-  | "fadeInDown"
-  | "fadeInUp"
-  | "fadeInLeft"
-  | "fadeInLeftBig"
-  | "fadeInRight"
-  | "fadeInRightBig"
-  | "flipInX"
-  | "flipInY"
-  | "lightSpeedInRight"
-  | "lightSpeedInLeft"
-  | "rotateInDownLeft"
-  | "rotateInDownRight"
-  | "rotateInUpLeft"
-  | "rotateInUpRight"
-  | "jackInTheBox"
-  | "rollIn"
-  | "zoomIn"
-  | "zoomInDown"
-  | "zoomInUp"
-  | "zoomInLeft"
-  | "zoomInRight"
-  | "slideInDown"
-  | "slideInLeft"
-  | "slideInRight"
-  | "slideInUp";
-
 function applyAnimateCSS(
   elems: HTMLElement[],
-  animationType: string,
+  animationType: Animations,
   additionalAnimationClasses?: string[]
 ) {
   if (animationType) {
@@ -87,7 +44,7 @@ function revealHiddenElems(elems: HTMLElement[]): void {
 }
 
 type AnimationParams = {
-  animationType?: string;
+  animationType?: Animations;
   additionalAnimationClasses?: string[];
 };
 
