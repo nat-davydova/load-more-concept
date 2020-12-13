@@ -1,0 +1,13 @@
+mixin animationsOptions
+    each animation in ["bounce", "flash", "pulse", "rubberBand", "shakeX", "shakeY" ,"headShake","swing","tada","wobble","jello","heartBeat","backInLeft","backInRight","bounceIn","bounceInLeft","bounceInRight","fadeIn","fadeInDown","fadeInUp","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","flipInX","flipInY","lightSpeedInRight","lightSpeedInLeft","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","jackInTheBox","rollIn","zoomIn","zoomInDown","zoomInUp","zoomInLeft","zoomInRight","slideInDown","slideInLeft","slideInRight","slideInUp"]
+      option(value= animation)= animation
+
+.row.mb-5
+    .col-md-4.m-auto
+        .animations
+            .animations__title.mb-3 Pick an animation type and click 'Load More' then:
+            form.animations__form
+                select.form-control#animations-list
+                    option(value="none") no animation
+                    + animationsOptions
+
