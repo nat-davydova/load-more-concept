@@ -35,7 +35,10 @@ User is able to:
 * remove pieces which are marked with `YOU DON'T NEED IT IN YOUR CODE` - they are for animations select list handling;
 * remove all the `animationSelectHandler.ts` - it's for animations select list handling;
 * change `let ANIMATE_CSS_ANIMATION_TYPE` in the `app.ts` to `const`;
-* pass the animation type to `ANIMATE_CSS_ANIMATION_TYPE` if you want any (all the animations you could use are in `Animations` type) or just leave it equal to empty string, if you don't need an animation;
+* pass the animation type to `ANIMATE_CSS_ANIMATION_TYPE` if you want any (all the animations you could use are in `Animations` type) or just leave it equal to empty string, if you don't need an animation:
+```
+const ANIMATE_CSS_ANIMATION_TYPE = 'fadeIn' // pass animation names without 'animate__' prefix
+```
 
 ### Also you could:
 
