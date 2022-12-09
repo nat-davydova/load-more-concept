@@ -2,7 +2,7 @@
 
 [Check the Demo](https://codepen.io/nat-davydova/full/XWKxJyd)
 
-<img src="http://natali-davydova.me/assets/img/load-more/full-1.png" width="650" />
+<img src="http://eisenpar.com/portfolio2/assets/img/load-more/full-1.png" width="650" />
 
 ## Description
 
