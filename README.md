@@ -1,6 +1,6 @@
 # "Load More" concept (Animate.css compatible)
 
-[Check the Demo](https://codepen.io/nat-davydova/full/XWKxJyd)
+[Check the Demo](https://codepen.io/nat-davydova/full/XWKxJyd) 
 
 <img src="http://eisenpar.com/portfolio2/assets/img/load-more/full-1.png" width="650" />
 
